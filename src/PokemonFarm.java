@@ -27,25 +27,24 @@ class PokemonFarm {
 	}
 
 	public void feed(String pokemonName,String item){
-		int i;
 		if(pokemonName.equals("all")){
 			for(Pokemon pokemon: pokemons){
 				pokemon.eat(item);
 			}
 		}else {
-			for(i=0;i<pokemons.size();i++) {
-				if(pokemonName.equals(pokemons.get(i).getName())) {
-					break;
-				}else if(i == pokemons.size()-1) {
-					System.out.println("There is no pokemon with that name.");
-					return ;
-				}
-			}
-			pokemons.get(i).eat(item);
-			
+			System.out.println("An unknown error occur.");
 		}
 	}
+	public void feed(int i,String item){
+		
+			pokemons.get(i).eat(item);
+			
+	}
+	
 	public int getsize() {
 		return pokemons.size();
+	}
+	public void walk(int i) {
+		pokemons.get(i).walk();
 	}
 }

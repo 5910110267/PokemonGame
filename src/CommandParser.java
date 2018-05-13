@@ -20,7 +20,6 @@ class CommandParser{
 		while(isRunning){
 			System.out.print("\nEnter your command Type: ");
 			command = commandScanner.next();
-			// System.out.println("You type \'"+command+"\'");
 			if(command.equals("quit")){
 				isRunning = false;
 				System.out.println("Good bye, See you next time.");
@@ -44,10 +43,30 @@ class CommandParser{
 				String subCommand = commandScanner.nextLine();
 				int i = Integer.parseInt(subCommand);
 				if(i<pokemonFarm.getsize()) {
-					
+					System.out.print(pokemonFarm.getName(i)+" are selected,Entered your command: ");
+					subCommand = commandScanner.nextLine();
+					while(!subCommand.equals("exit")) {
+						if(subCommand.equals("feed")) {
+							
+						}else if(subCommand.equals("feed")) {
+							
+						}else if(subCommand.equals("walk")) {
+							pokemonFarm.walk(i);
+						}else {
+							System.out.println("You've entered wrong command ,try again.");
+						}
+						subCommand = commandScanner.nextLine();
+					}
+				}else {
+					System.out.println("The list order you've entered didn't exist ,try again.");
 				}
-			}
-			else{
+			}else if(command.equals("hunt")){
+				
+				
+				
+				
+				
+			}else {
 				System.out.println("You've entered wrong command ,try again.");
 			}
 		}
@@ -59,14 +78,10 @@ class CommandParser{
 		if(species.equals("Lapras")){
 			Lapras lapras = new Lapras(name, 10f, 5f);
 			pokemonFarm.addPokemon(lapras);
-		}else if(species.equals("Charmeleon")) {
-			Charmeleon charmeleon = new Charmeleon(name, 8f, 6f);
-			pokemonFarm.addPokemon(charmeleon);
-		}else if(species.equals("Charizard")) {
-			Charmeleon charmeleon = new Charmeleon(name, 8f, 6f);
-			pokemonFarm.addPokemon(charmeleon);
+		}else if(species.equals("Lizardon")) {
+			Charmander charmander = new Charmander(name, 8f, 6f);
+			pokemonFarm.addPokemon(charmander);
 		}
-
 	}
 
 	private void listPokemons(){
